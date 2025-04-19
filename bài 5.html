@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng số chẵn 0-20</title>
+</head>
+<body>
+    <h1>Tính tổng các số chẵn từ 0 đến 20</h1>
+    <p id="ketQua5"></p>
+
+    <script>
+        let tongChan = 0;
+        for (let i = 0; i <= 20; i += 2) {
+            tongChan += i;
+        }
+        document.getElementById("ketQua5").textContent = "Tổng các số chẵn từ 0 đến 20 là: " + tongChan;
+    </script>
+</body>
+</html>

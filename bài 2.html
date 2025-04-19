@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xếp loại học lực (Prompt)</title>
+</head>
+<body>
+    <h1>Xếp loại học lực</h1>
+    <p id="ketQua1"></p>
+
+    <script>
+        function xepLoai() {
+            const diemChuoi = prompt("Vui lòng nhập điểm trung bình của sinh viên:");
+            let xepLoaiText = "";
+            const diem = parseFloat(diemChuoi);
+
+            if (diemChuoi === null) {
+                xepLoaiText = "Bạn đã hủy nhập.";
+            } else if (isNaN(diem)) {
+                xepLoaiText = "Vui lòng nhập một số hợp lệ.";
+            } else if (diem >= 9 && diem <= 10) {
+                xepLoaiText = "Xuất sắc";
+            } else if (diem >= 7 && diem < 9) {
+                xepLoaiText = "Khá";
+            } else if (diem >= 5 && diem < 7) {
+                xepLoaiText = "Trung bình";
+            } else if (diem >= 0 && diem < 5) {
+                xepLoaiText = "Yếu";
+            } else {
+                xepLoaiText = "Điểm không hợp lệ.";
+            }
+
+            document.getElementById("ketQua1").textContent = "Xếp loại: " + xepLoaiText;
+        }
+
+       
+        xepLoai();
+    </script>
+</body>
+</html>

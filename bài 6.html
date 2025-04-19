@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giai thừa (Prompt)</title>
+</head>
+<body>
+    <h1>Tính giai thừa</h1>
+    <p id="ketQua6"></p>
+
+    <script>
+        function tinhGiaiThua() {
+            const nChuoi = prompt("Vui lòng nhập một số nguyên dương n:");
+            const ketQuaElement = document.getElementById("ketQua6");
+
+            if (nChuoi === null) {
+                ketQuaElement.textContent = "Bạn đã hủy nhập.";
+                return;
+            }
+
+            const n = parseInt(nChuoi);
+
+            if (isNaN(n) || n <= 0 || !Number.isInteger(n)) {
+                ketQuaElement.textContent = "Vui lòng nhập một số nguyên dương hợp lệ.";
+                return;
+            }
+
+            let giaiThua = 1;
+            for (let i = 1; i <= n; i++) {
+                giaiThua *= i;
+            }
+
+            ketQuaElement.textContent = "Giai thừa của " + n + " là: " + giaiThua;
+        }
+
+      
+        tinhGiaiThua();
+    </script>
+</body>
+</html>
